@@ -4,5 +4,6 @@ seaborn
 flask
 jupyter
 black
-
--e.
+seaborn
+scikit-learn
+#-e.
