@@ -6,4 +6,6 @@ jupyter
 black
 seaborn
 scikit-learn
-#-e.
+fastapi[all]
+streamlit
+-e.

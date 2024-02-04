@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  streamlit:
+    container_name: frontend
+    build:
+        context: .
+        dockerfile: src/diamond_price_prediction/frontend/Dockerfile
+    command: streamlit run src/diamond_price_prediction/frontend/dashboard.py
+    ports:
+      - 8501:8501
+    depends_on:
+      - fast_api
+    volumes:
+        - .:/app
+
+  fast_api:
+    container_name: backend
+    build:
+        context: .
+        dockerfile: src/diamond_price_prediction/backend/Dockerfile
+    command: sh -c "python src/diamond_price_prediction/backend/application.py"
+    ports:
+      - 9080:9080
+    volumes:
+        - .:/app
+
+volumes:
+     .:
