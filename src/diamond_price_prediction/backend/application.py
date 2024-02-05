@@ -23,3 +23,4 @@ def predict_diamond_price(dict_of_values:CustomData):
 
 if __name__ == "__main__":
     uvicorn.run("application:app", host="0.0.0.0", port=9080,reload=True)
+    #uvicorn.run("application:app", port=9080,reload=True)
